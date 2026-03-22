@@ -15,3 +15,10 @@ jspm_packages/
 # conversions
 conversions/
 .dev-cli/
+
+# projects
+projects/
+
+# build
+build/
+dist/

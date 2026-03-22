@@ -1,22 +1,29 @@
-import { getThemeOptions } from '../ui/theme.js';
+import { getThemeOptions } from "../ui/theme.js";
+import { startMatrix } from "../ui/matrix.js";
+import ora from "ora";
+import { printStaticAscii } from "../ui/ascii.js";
 
 export const matrixMode = async () => {
   const theme = getThemeOptions();
-  console.log(theme.success('0101010101010101010101010101'));
-  console.log(theme.success('1010101010101010101010101010'));
-  console.log(theme.success('0110011010101111000101010101'));
-  
-  await new Promise(r => setTimeout(r, 1000));
-  
-  console.log(theme.success('> Access granted...'));
-  console.log(theme.success('Welcome to the Matrix.'));
+  const spinner = ora(
+    theme.success("Iniciando Matrix... (Presiona 'q' o ESC para salir)"),
+  ).start();
+
+  await new Promise((r) => setTimeout(r, 1500));
+  spinner.stop(); // Evita que se quede atascado antes de los clear-screen
+
+  await startMatrix();
+
+  spinner.succeed(theme.success("\n> La Matrix ha sido desconectada."));
+  spinner.info("Bienvenido de vuelta a la realidad.");
 };
 
 export const coffeeBreak = async () => {
   const theme = getThemeOptions();
-  console.log(theme.info('☕ Preparando café...'));
-  
-  await new Promise(r => setTimeout(r, 2000));
-  
-  console.log(theme.success('✔ Listo, sigue programando 🚀'));
+  const spinner = ora(theme.info("☕ Preparando café...")).start();
+  printStaticAscii("coffe.txt", "primary");
+
+  await new Promise((r) => setTimeout(r, 2000));
+  spinner.stop();
+  spinner.succeed(theme.success("¡Listo!, sigue programando 🚀"));
 };

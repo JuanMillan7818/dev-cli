@@ -79,6 +79,7 @@ export const showMainMenu = async () => {
       process.exit(0);
     }
   } catch (error) {
+    console.log(error);
     printStaticAscii("sky.txt", "primary");
     process.exit(0);
   }
