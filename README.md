@@ -1,318 +1,124 @@
-# 🚀 Dev Assistant CLI
+# 🚀 Dev Assistant CLI (dev-cli)
 
-Un CLI interactivo diseñado para mejorar la productividad del desarrollador, ofreciendo herramientas útiles, personalización visual y una experiencia tipo aplicación directamente en la terminal.
-
----
-
-# 📌 1. Objetivo del proyecto
-
-Crear una herramienta CLI moderna que:
-
-- Sea visualmente atractiva (no el típico CLI plano)
-- Ofrezca interacción tipo aplicación (menús, navegación)
-- Permita personalización (tema, usuario, preferencias)
-- Incluya funcionalidades útiles para desarrolladores
-- Sea fácilmente extensible
+Dev Assistant CLI es una herramienta de línea de comandos interactiva diseñada para mejorar tu flujo de trabajo de desarrollo. Ofrece una experiencia amigable "tipo aplicación" directamente en la terminal, automatizando tareas cotidianas como la creación de proyectos completos, el monitoreo del sistema en tiempo real, gestión de notas rápidas y conversiones de datos.
 
 ---
 
-# 🎯 2. Alcance (MVP)
+## 🌟 Características Principales
 
-## Funcionalidades principales
+### 🎮 Menú Interactivo y Navegación
 
-### 🏠 Menú principal
+Interfaz amigable construida con el poderoso bloque de `@inquirer/prompts` para navegar con cursores sin necesidad de recordar banderas ni subcomandos complejos.
 
-- Navegación interactiva
-- Opciones:
-  - Crear proyecto
-  - Ver servicios
-  - Notas rápidas
-  - Utilidades
-  - Configuración
-  - Salir
+### 🏗️ Generador de Proyectos Base (Scaffold)
 
----
+Menú interactivo y auto-configuración de entorno con animaciones tipo `ora`. Seleccionas una tecnología y obtienes al instante una base limpia:
 
-### 🛠️ Crear proyecto
+- **React + TypeScript** (Vite preconfigurado).
+- **React + JavaScript** (Vite preconfigurado).
+- **Express API** (Cors, Dotenv y enrutamiento inicial).
+- **Node CLI** (Commander, Inquirer y Chalk listos para usar).
+  _*(Las plantillas se autogeneran de forma aislada en la carpeta `projects/` y la CLI te ofrece autoabrir VS Code de inmediato).*_
 
-- Selección de tipo de proyecto
-- Simulación o creación básica de estructura
-- Feedback visual con loaders
+### 📡 Live Monitor del Sistema
 
----
+Dashboard dinámico libre de parpadeos impulsado por `log-update` que muestra la analítica general:
 
-### 📝 Notas rápidas
+- Chequeo ping a la disponibilidad de **Internet**, **GitHub API**, y **JSON API**.
+- Porcentajes aproximados de consumo de **CPU** y exactos de **RAM** integrados.
+- Auto refresco interactivo en pantalla cada `2s` constante sin llenar el registro de logs antiguos.
 
-- Crear nota
-- Listar notas
-- Eliminar nota
-- Persistencia en archivo local
+### 🧰 Utilidades para Desarrolladores
 
----
+- **Conversor**: Transformación bidireccional limpia entre binarios `JSON ↔ XML` usando herramientas robustas detrás de escena.
+- **ASCII**: Generador al vuelo de banners y letreros grandes mediante _Figlet_.
 
-### 🧰 Utilidades
+### 📝 Notas Rápidas & Configuración
 
-#### 🔄 Conversión de archivos
+- Gestor local que graba en los archivos tu configuración personalizada: Nombre para el mensaje de bienvenida y bloc de apuntes ligeros sin salir de la consola.
 
-- JSON → XML
-- XML → JSON
+### 🕹️ Easter Eggs Interactivos
 
-Flujo:
+¿Cansado de programar? Escribe los comandos ocultos visuales:
 
-- Solicita ruta
-- Detecta archivos automáticamente
-- Convierte y guarda en `/conversions`
-- Muestra resumen final
+- **Matrix Mode**: Una fiel simulación gráfica de la lluvia digital de \`Matrix\` (`dev-cli matrix`). Refactorizada usando efectos difuminados ANSI y un control impecable del frame para evitar saltos.
+- **Coffee Break**: Temporizador visual ASCII para tomar un respiro.
 
 ---
 
-### ⚙️ Configuración
+## 📦 Tecnologías Utilizadas
 
-- Nombre de usuario
-- Tema (dark/light)
-- Animaciones ON/OFF
-- Color principal
+Este CLI exprime el ecosistema moderno de NodeJS:
 
----
-
-### ❓ Comando `--help`
-
-- Comandos disponibles
-- Salida estilizada
+- **[Commander]**: Motor de parseo para banderas e inicialización por terminal.
+- **[@inquirer/prompts]**: Selectores estilo dropdown, input boxes y confirmaciones.
+- **[Chalk] / [Ora]**: Tinte del log de interfaz y animaciones circulares precisas.
+- **[Log-Update]**: Renderizado de sobreescritura (Overwriting stdout buffers), fundamental para Matrix y el System Monitor.
+- **[Figlet]**: Transformación dinámica a texto de código terminal grande (ascii art) a voluntad.
+- **[xml2js] / [xmlbuilder]**: Parsers nativos en el pipeline de las utilities de conversión de datos.
 
 ---
 
-# 🎨 3. Experiencia de usuario (UX)
+## 📂 Estructura del Código
 
-## Objetivos UX
-
-- Interfaz limpia
-- Feedback inmediato
-- Animaciones suaves
-- Sensación tipo app
-
----
-
-## 🎭 Sistema de ASCII (🔥 clave visual)
-
-### 📂 Estructura
-
-```bash
-/assets/ascii/
-  ├── logo.txt
-  ├── welcome.txt
-  ├── success.txt
-  ├── error.txt
-```
-
----
-
-### 📥 Carga de ASCII
-
-Los archivos ASCII se cargan dinámicamente desde el sistema de archivos.
-
----
-
-### 🎨 Uso de colores
-
-Se combinará ASCII con estilos usando:
-
-- Chalk
-
-Ejemplo conceptual:
-
-- Logo en color primario
-- Errores en rojo
-- Éxitos en verde
-
----
-
-### 🧠 ASCII dinámico
-
-Uso de:
-
-- Figlet
-
-Para generar títulos dinámicos como:
-
-- Nombre del CLI
-- Mensajes personalizados con el usuario
-
----
-
-### 🎯 Uso estratégico
-
-El ASCII se usará en:
-
-- Pantalla inicial
-- Mensajes importantes (éxito/error)
-- Transiciones clave
-
----
-
-# 🎮 4. Easter Eggs (🔥 diferencial)
-
-El CLI incluirá comandos ocultos para sorprender al usuario.
-
----
-
-## 🧪 Ejemplo: Modo Matrix
-
-```bash
-dev-cli matrix
-```
-
-Salida esperada:
-
-```bash
-010101010101010101
-> Access granted...
-```
-
----
-
-## ☕ Ejemplo: Coffee break
-
-```bash
-dev-cli coffee
-```
-
-Salida:
-
-```bash
-☕ Preparando café...
-✔ Listo, sigue programando 🚀
-```
-
----
-
-## 🎯 Objetivo
-
-- Hacer la experiencia memorable
-- Mostrar creatividad
-- Diferenciar el proyecto de otros CLI
-
----
-
-# ⚙️ 5. Tecnologías
-
-## Runtime
-
-- Node.js
-
-## Librerías principales
-
-- Inquirer → prompts interactivos
-- Chalk → estilos
-- Ora → loaders
-- Figlet → ASCII dinámico
-- Commander → comandos CLI
-
-## Conversión
-
-- xml2js → XML → JSON
-- js2xmlparser o xmlbuilder → JSON → XML
-
----
-
-# 🧱 6. Arquitectura
-
-```bash
-dev-cli/
-├── assets/
-│   └── ascii/          # 🔥 ASCII personalizado
+```text
+DEV-CLI/
 ├── bin/
+│   └── index.js             # Punto principal de montaje para `dev-cli`
+├── assets/
+│   └── ascii/               # Repositorio de ASCII artesano y estático
 ├── src/
-│   ├── commands/
-│   ├── ui/
-│   │   ├── ascii.js    # 🔥 loader de ASCII
-│   │   ├── theme.js
-│   │   └── menu.js
+│   ├── commands/            # Módulos de orquestación transaccional
+│   │   ├── create.js        # Algoritmo interactivo de creación de proyectos
+│   │   ├── monitor.js       # Live Dashboard con setIntervals limpios
+│   │   ├── notes.js         # Manipulación de la consola para apuntes
+│   │   ├── utilities.js     # Bloque de convertidores de la dev app
+│   │   ├── config.js        # Manejador del login visual inicial
+│   │   └── easterEggs.js    # Invocaciones ocultas (Matrix/Coffee)
 │   ├── services/
-│   │   └── converter.js
-│   ├── utils/
-│   └── data/
-├── conversions/
-├── package.json
+│   │   ├── generator.js     # Constructor nativo `fs` que escribe las plantillas (React, API)
+│   │   └── converter.js     # Motor que parsea JSON ↔ XML
+│   ├── data/                # Pseudo-database (Archivos de texto en crudo json)
+│   └── ui/
+│       ├── menu.js          # El corazón y bucle infinito del CLI Interactivo
+│       ├── theme.js         # Colección de colores (paleta Chalk extendida)
+│       ├── ascii.js         # Injector de componentes Figlet / Files
+│       └── matrix.js        # Core de arrays matemáticos para el difuminado ANSI
+├── projects/                # Salida automática de los comandos CREATE
+└── conversions/             # Salida automática de los comandos UTILITIES
 ```
 
 ---
 
-# 💾 7. Persistencia
+## 🛠️ Instalación y Uso
 
-## Config
+Se recomienda un motor mínimo de **Node.js v16+**.
 
-```bash
-~/.dev-cli/config.json
-```
-
-## Notas
-
-```bash
-~/.dev-cli/notes.json
-```
-
----
-
-# 🧩 8. Comandos
-
-```bash
-dev-cli
-dev-cli create
-dev-cli config
-dev-cli notes
-dev-cli utilities
-dev-cli matrix      # Easter egg
-dev-cli coffee      # Easter egg
-dev-cli --help
-```
-
----
-
-# 🎯 9. Características destacadas
-
-- CLI tipo aplicación
-- Sistema de personalización
-- Conversión de archivos real
-- ASCII dinámico + personalizado
-- Easter eggs creativos
-- Arquitectura modular
-
----
-
-# 🚀 10. Roadmap
-
-- Soporte para CSV / YAML
-- Plugins
-- Integración con APIs
-- Más easter eggs 😄
-
----
-
-# 🧪 11. Instalación
+Clonar e instalar las dependencias:
 
 ```bash
 npm install
-npm link
-dev-cli
 ```
 
+Para simular una app nativa en tu OS de forma global (te dejará invocar `dev-cli` en cualquier pestaña sin usar node):
+
+```bash
+npm link
+```
+
+### Comandos de Atajo CLI
+
+Si has `linkeado` el proyecto, puedes saltar directo a la acción:
+
+- `dev-cli` _(ó dev-cli start)_: Lanza el **Menú Interactivo Central**.
+- `dev-cli create`: Va directo al generador de plantillas base de librerías.
+- `dev-cli monitor`: Lanza directo el visualizador de RAM, CPU y ping.
+- `dev-cli utilities`: Abre el flujo para transformar un archivo local de json o xml.
+- `dev-cli notes`: Abre directo tus notas.
+- `dev-cli config`: Edita tu nombre de dev-cli en vivo.
+- `dev-cli matrix`: Inicia la lluvia digital `Matrix` (Efecto difuminado interactivo).
+- `dev-cli coffee`: Despliega el spinner `Coffee break`.
+
 ---
 
-# 👨‍💻 12. Autor
-
-- Nombre: [Tu nombre]
-
----
-
-# 📄 13. Notas finales
-
-Este proyecto demuestra:
-
-- Diseño de CLI avanzado
-- UX en terminal
-- Manejo de archivos
-- Creatividad aplicada
-- Arquitectura escalable
-
----
+✨ _Construido para hacer más dinámico, vistoso y ágil el workflow del programador desde su terminal._
