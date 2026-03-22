@@ -1,6 +1,7 @@
 import { select, confirm, Separator } from "@inquirer/prompts";
 import { printStaticAscii, clearScreen } from "./ascii.js";
 import { getThemeOptions, inquirerSpanishTheme } from "./theme.js";
+import chalk from "chalk";
 
 // Import commands
 import { createProject } from "../commands/create.js";
@@ -20,9 +21,10 @@ export const showMainMenu = async () => {
 
     console.log(
       theme.info(
-        `\n¡Hola, ${config.username}! Bienvenido a Dev Assistant CLI.\n`,
+        `\n¡Hola, ${config.username}! Bienvenido a Dev Assistant CLI.`,
       ),
     );
+    console.log(chalk.dim("Desarrollado con ♥ por Juan Pablo Millan\n"));
 
     const action = await select({
       message: "¿Qué deseas hacer?",
