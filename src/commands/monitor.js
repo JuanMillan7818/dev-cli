@@ -101,7 +101,7 @@ export const monitorMenu = async () => {
       console.log(
         `📦 JSON API        ${jsonApi ? chalk.green("🟢 Online") : chalk.red("🔴 Offline")}`,
       );
-      console.log(`🖥️ CPU             ${chalk.yellow(cpu + "%")}`);
+      console.log(`🖥  CPU             ${chalk.yellow(cpu + "%")}`);
       console.log(`💾 RAM             ${chalk.yellow(ram + "%")}\n`);
 
       continue;
