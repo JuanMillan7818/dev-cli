@@ -1,0 +1,26 @@
+{
+  "name": "dev-cli",
+  "version": "1.0.0",
+  "description": "Un CLI interactivo diseñado para mejorar la productividad del desarrollador, ofreciendo herramientas útiles, personalización visual y una experiencia tipo aplicación directamente en la terminal.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "figlet": "^1.11.0",
+    "inquirer": "^13.3.2",
+    "log-update": "^7.2.0",
+    "ora": "^9.3.0",
+    "xml2js": "^0.6.2",
+    "xmlbuilder": "^15.1.1"
+  },
+  "bin": {
+    "dev-cli": "./bin/index.js"
+  }
+}

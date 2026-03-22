@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<root>
+  <_id>69c03d91b71aa31be475eb651</_id>
+  <index>0</index>
+  <guid>0643176d-e4cd-43a9-8443-6f93cb0731cb</guid>
+  <isActive>true</isActive>
+  <balance>$3,730.49</balance>
+  <picture>http://placehold.it/32x32</picture>
+  <age>37</age>
+  <eyeColor>blue</eyeColor>
+  <name>Debora Drake</name>
+  <gender>female</gender>
+  <company>UNEEQ</company>
+  <email>deboradrake@uneeq.com</email>
+  <phone>+1 (855) 417-2807</phone>
+  <address>626 Adams Street, Rote, North Dakota, 351</address>
+  <about>Qui aute aute aliquip sit. Elit aliqua eiusmod dolore ex nulla mollit occaecat voluptate reprehenderit laboris. Deserunt quis aliqua sint ullamco ad. Excepteur id elit laboris labore. Non commodo laboris anim nulla do commodo adipisicing. Sit esse cupidatat consectetur occaecat deserunt est.&#xD;
+</about>
+  <registered>2018-02-12T04:15:49 +05:00</registered>
+  <latitude>84.384463</latitude>
+  <longitude>-23.716428</longitude>
+  <tags>nostrud</tags>
+  <tags>sint</tags>
+  <tags>ea</tags>
+  <tags>sunt</tags>
+  <tags>eu</tags>
+  <tags>pariatur</tags>
+  <tags>do</tags>
+  <friends>
+    <id>0</id>
+    <name>Ray Gamble</name>
+  </friends>
+  <friends>
+    <id>1</id>
+    <name>Michael Ratliff</name>
+  </friends>
+  <friends>
+    <id>2</id>
+    <name>May Stevenson</name>
+  </friends>
+  <greeting>Hello, Debora Drake! You have 8 unread messages.</greeting>
+  <favoriteFruit>banana</favoriteFruit>
+</root>

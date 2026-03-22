@@ -1,0 +1,37 @@
+{
+  "_id": "69c03d91b71aa31be475eb651",
+  "index": 0,
+  "guid": "0643176d-e4cd-43a9-8443-6f93cb0731cb",
+  "isActive": true,
+  "balance": "$3,730.49",
+  "picture": "http://placehold.it/32x32",
+  "age": 37,
+  "eyeColor": "blue",
+  "name": "Debora Drake",
+  "gender": "female",
+  "company": "UNEEQ",
+  "email": "deboradrake@uneeq.com",
+  "phone": "+1 (855) 417-2807",
+  "address": "626 Adams Street, Rote, North Dakota, 351",
+  "about": "Qui aute aute aliquip sit. Elit aliqua eiusmod dolore ex nulla mollit occaecat voluptate reprehenderit laboris. Deserunt quis aliqua sint ullamco ad. Excepteur id elit laboris labore. Non commodo laboris anim nulla do commodo adipisicing. Sit esse cupidatat consectetur occaecat deserunt est.\r\n",
+  "registered": "2018-02-12T04:15:49 +05:00",
+  "latitude": 84.384463,
+  "longitude": -23.716428,
+  "tags": ["nostrud", "sint", "ea", "sunt", "eu", "pariatur", "do"],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Ray Gamble"
+    },
+    {
+      "id": 1,
+      "name": "Michael Ratliff"
+    },
+    {
+      "id": 2,
+      "name": "May Stevenson"
+    }
+  ],
+  "greeting": "Hello, Debora Drake! You have 8 unread messages.",
+  "favoriteFruit": "banana"
+}
