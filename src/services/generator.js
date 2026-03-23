@@ -304,6 +304,16 @@ const generateNodeCLI = async (dir, name) => {
   const binDir = path.join(dir, "bin");
   await fs.mkdir(binDir, { recursive: true });
 
+  const assetsDir = path.join(dir, "assets");
+  await fs.mkdir(assetsDir, { recursive: true });
+
+  // Crear la base de src y sus subdirectorios
+  const srcDir = path.join(dir, "src");
+  await fs.mkdir(path.join(srcDir, "commands"), { recursive: true });
+  await fs.mkdir(path.join(srcDir, "ui"), { recursive: true });
+  await fs.mkdir(path.join(srcDir, "data"), { recursive: true });
+  await fs.mkdir(path.join(srcDir, "utils"), { recursive: true });
+
   await fs.writeFile(
     path.join(binDir, "index.js"),
     `#!/usr/bin/env node
